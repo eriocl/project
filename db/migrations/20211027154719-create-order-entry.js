@@ -10,31 +10,59 @@ module.exports = {
       },
       order_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Orders',
+          key: 'id',
+        }
       },
       bag_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Bags',
+          key: 'id',
+        }
       },
       size_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Sizes',
+          key: 'id',
+        }
       },
       material_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Materials',
+          key: 'id',
+        }
       },
       bag_color: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Colors',
+          key: 'id',
+        }
       },
       handles_color: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Colors',
+          key: 'id',
+        }
       },
       bot_color: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Colors',
+          key: 'id',
+        }
       },
       pcs: {
         allowNull: false,
@@ -55,12 +83,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_STAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_STAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

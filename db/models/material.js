@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Material.init({
     name: DataTypes.STRING,
+    description: DataTypes.TEXT,
     price: DataTypes.INTEGER
   }, {
     sequelize,

@@ -12,6 +12,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      description: {
+        allowNull: false,
+        type: Sequelize.TEXT,
+      },
       price: {
         allowNull: false,
         type: Sequelize.INTEGER
@@ -19,12 +23,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_STAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_STAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },
