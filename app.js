@@ -7,6 +7,7 @@ const logger = require("morgan");
 const hbs = require('hbs')
 
 const indexRouter = require("./routes/indexRouter");
+const loginRouter = require("./routes/loginRouter");
 
 const app = express();
 const { PORT } = process.env;
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.env.PWD, "public")));
 
 app.use("/", indexRouter);
+app.use("/login", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
