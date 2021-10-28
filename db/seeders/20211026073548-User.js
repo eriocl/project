@@ -8,12 +8,12 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-     */
+    */
     await queryInterface.bulkInsert(
-      'Orders',
+      'Users',
       [
         {
-          paid: false, price: 100500, delivery_adress: 'Лениниский проспект 39 дом 2 кв 6', user_id: 1,
+          name: 'Alex', phone: '+79095679898', email: 'test@mail.ru', password: 'hz',
         },
       ],
       {},
@@ -27,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Orders', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
   },
 };
