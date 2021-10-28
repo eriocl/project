@@ -8,7 +8,10 @@ class OrderController {
       const user = { ...req.body.user };
       const order = { ...req.body.order };
       const entry = { ...req.body.entry };
-      // const newUser = User
+      const newUser = await User.create({ ...user });
+      const newOrder = await Order.create({ ...order, user_id: newUser.id });
+      const newEntry = await Entry.create({ ...entry, order_id: newOrder.id });
+      console.log(newUser);
     } catch (e) {
       console.log(e);
       res.sendStatus(500);
