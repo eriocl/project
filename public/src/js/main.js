@@ -28,29 +28,23 @@ $wrapper.addEventListener("change", (event) => {
     }
 })
 
-$orderButton.addEventListener("click", async () => {
-  const bag_id = document.querySelector("input[name=modelRadio]:checked").value;
-  const size_id = document.querySelector("input[name=sizeRadio]:checked").value;
+$orderButton.addEventListener('click', async () => {
+  const bag_id = document.querySelector('input[name=modelRadio]:checked').value;
+  const size_id = document.querySelector('input[name=sizeRadio]:checked').value;
   const material_id = document.querySelector(
-    "input[name=materialRadio]:checked"
+    'input[name=materialRadio]:checked',
   ).value;
   const bag_color = document.querySelector(
-    "input[name=colorRadio]:checked"
+    'input[name=colorRadio]:checked',
   ).value;
-  const ind_pack = document.querySelector("input[name=option1]:checked")
-    ? true
-    : false;
-  const label = document.querySelector("input[name=option2]:checked")
-    ? true
-    : false;
-  const sticker = document.querySelector("input[name=label]:checked")
-    ? true
-    : false;
-  const pcs = document.querySelector("input[name=countOrder]").value;
-  const name = document.querySelector("input[name=client_name]").value;
-  const phone = document.querySelector("input[name=client_phone]").value;
-  const email = document.querySelector("input[name=client_email]").value;
-  const delivery_address = document.querySelector("input[name=address]").value;
+  const ind_pack = !!document.querySelector('input[name=option1]:checked');
+  const label = !!document.querySelector('input[name=option2]:checked');
+  const sticker = !!document.querySelector('input[name=label]:checked');
+  const pcs = document.querySelector('input[name=countOrder]').value;
+  const name = document.querySelector('input[name=client_name]').value;
+  const phone = document.querySelector('input[name=client_phone]').value;
+  const email = document.querySelector('input[name=client_email]').value;
+  const delivery_address = document.querySelector('input[name=address]').value;
 
   const price = getCount() * getFullPricePerPcs();
 
@@ -68,18 +62,16 @@ $orderButton.addEventListener("click", async () => {
     user: { name, phone, email },
     order: { delivery_address, price },
   };
-
-  const response = await fetch("/orders", {
-    method: "POST",
+  const response = await fetch('/orders', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
-    console.log("Ураааа");
+    console.log('Ураааа');
   }
 })
 
