@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -12,11 +10,13 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Orders",
+      'Orders',
       [
-        { paid: false, price: 100500 },
+        {
+          paid: false, price: 100500, delivery_adress: 'Лениниский проспект 39 дом 2 кв 6', user_id: 1,
+        },
       ],
-      {}
+      {},
     );
   },
 
@@ -27,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("Orders", null, {});
+    await queryInterface.bulkDelete('Orders', null, {});
   },
 };
