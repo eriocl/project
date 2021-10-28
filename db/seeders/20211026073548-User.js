@@ -8,14 +8,13 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-     */
+    */
     await queryInterface.bulkInsert(
-      'Sizes',
+      'Users',
       [
-        { size: 'Большой', price: 400 },
-        { size: 'Средний', price: 300 },
-        { size: 'Маленький', price: 200 },
-        { size: 'Индивидуальный', price: 0 },
+        {
+          name: 'Alex', phone: '+79095679898', email: 'test@mail.ru', password: 'hz',
+        },
       ],
       {},
     );
@@ -28,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Sizes', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
   },
 };
