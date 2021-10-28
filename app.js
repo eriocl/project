@@ -3,8 +3,8 @@ require("dotenv").config();
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const hbs = require('hbs')
 
 const indexRouter = require("./routes/indexRouter");
 
@@ -15,10 +15,11 @@ const { PORT } = process.env;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
+hbs.registerPartials(path.join(process.env.PWD, 'views/partials'))
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cookieParser());
 app.use(express.static(path.join(process.env.PWD, "public")));
 
 app.use("/", indexRouter);
