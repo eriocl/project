@@ -10,7 +10,9 @@ class OrderController {
       console.log(entry);
       const newUser = await User.create({ ...user });
       const newOrder = await Order.create({ ...order, user_id: newUser.id, paid: false });
-      const newEntry = await OrderEntry.create({ ...entry, order_id: newOrder.id, handles_color: 1 });
+      const newEntry = await OrderEntry.create({
+        ...entry, order_id: newOrder.id, handles_color: 1, bot_color: 1,
+      });
       res.sendStatus(200);
     } catch (e) {
       console.log(e);
