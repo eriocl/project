@@ -1,23 +1,32 @@
 const $wrapper = document.querySelector(".container-sm");
 const $priceDiv = document.querySelector(".main__price-count");
 const $orderButton = document.querySelector("button[name=order-button]");
-$bagLogo = document.querySelector('h2[data-logo=logo]')
-$setBagLogoButton = document.querySelector('button[data-name=setBagLogo]')
-$setBagLogoInput = document.querySelector('input[name=shoper_inscription]')
-$disableImgAndLogoCheckBox = document.querySelector('input[data-name=disableImgAndLogo')
+const $bagLogo = document.querySelector('h2[data-logo=logo]');
+const $setBagLogoButton = document.querySelector('button[data-name=setBagLogo]');
+const $setBagLogoInput = document.querySelector('input[name=shoper_inscription]');
+const $disableImgAndLogoCheckBox = document.querySelector('input[data-name=disableImgAndLogo');
+const $fileUploadInput = document.querySelector('input[type=file]');
+const $fileUploadButton = document.querySelector('button[data-name=uploadButton]')
+
 
 
 $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
 
 $wrapper.addEventListener("change", (event) => {
-  if (
-    event.target.type === "radio" ||
-    event.target.type === "checkbox" ||
-    event.target.type === "number"
-  ) {
-    $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
-  }
-});
+    if (
+      event.target.type === "radio" ||
+      event.target.type === "checkbox" ||
+      event.target.type === "number"
+    ) {
+      $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
+    }
+    if (event.target === $disableImgAndLogoCheckBox) {
+          $fileUploadInput.disabled = !$fileUploadInput.disabled 
+          $setBagLogoInput.disabled = !$setBagLogoInput.disabled
+          $setBagLogoButton.disabled = !$setBagLogoButton.disabled
+          $fileUploadButton.disabled = !$fileUploadButton.disabled  
+    }
+})
 
 $orderButton.addEventListener("click", async () => {
   const bag_id = document.querySelector("input[name=modelRadio]:checked").value;
@@ -72,13 +81,9 @@ $orderButton.addEventListener("click", async () => {
   if (response.ok) {
     console.log("Ураааа");
   }
-});
-
+})
 
 $setBagLogoButton.addEventListener('click', ()=>{
     $bagLogo.innerText = $setBagLogoInput.value
     $setBagLogoInput.value =""
 })
-
-console.log($disableImgAndLogoCheckBox);
-
