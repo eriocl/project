@@ -4,6 +4,7 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
+const hbs = require('hbs')
 
 const indexRouter = require("./routes/indexRouter");
 
@@ -13,6 +14,8 @@ const { PORT } = process.env;
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
+
+hbs.registerPartials(path.join(process.env.PWD, 'views/partials'))
 
 app.use(logger("dev"));
 app.use(express.json());
