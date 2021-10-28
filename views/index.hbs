@@ -21,7 +21,12 @@
       <h2 class="main__title visually-hidden"></h2>
       <!-- <div class="main__card"> -->
       <div class="main__left">
-        <img class="main__img" src="img/il_1588xN.2202286823_ba4l.jpg" width="500" height="500" alt="фотография шопера">
+        <div class="position-relative">
+            <img class="main__img" src="img/shopper.jpg" width="500" height="500" alt="фотография шопера">
+            <div class="bg-info bg-transparent w-75 h-25 translate-middle-x position-absolute top-50 start-50">
+                <h2 class="position-absolute top-50 start-50 translate-middle-x">Your logo</h2>
+            </div>
+        </div>
         <div class="main__price">
           <span class="main__price-name">Цена:</span> <span class="main__price-count"> 0р.</span>
         </div>
@@ -30,16 +35,12 @@
       <div class="main__right">
         {{> accordeon}}
       </div>
-
-
     </section>
-
   </div>
-
   <section class="map">
     <h2 class="visually-hidden"></h2>
     <div class="map__about">
-      <address class="adress">Ул.Ордженикидзе дом 10, корпус 11 </address>
+      <address class="adress">Ул.Орджоникидзе дом 10, корпус 11 </address>
       <p class="about-us__contacts">Тел. : <a href="tel:+7495555655">+7 (495) 555-56-55</a></p>
       <p class="about-us__contacts">Email : <a href="shopers@elbrus.ru">shopers@elbrus.ru</a></p>
     </div>
@@ -60,7 +61,3 @@
   </div>
 </footer>
 
-
-
-
-_____________________________
