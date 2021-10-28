@@ -1,4 +1,5 @@
 <script defer src="/src/js/main.js"></script>
+<script defer src="/src/js/price.js"></script>
 
 <div class="container-sm">
  <div class="accordion accordion-flush" id="accordionFlushExample" >
@@ -47,25 +48,25 @@
       <div class="accordion-body" name="size-check-form">
           
          <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault1" checked value="Размер 1">
+                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault1" checked value="Размер 1" data-price="100">
                 <label class="form-check-label" for="sizeRadioDefault1">
                   Размер 1
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault2" value="Размер 2">
+                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault2" value="Размер 2" data-price="200">
                 <label class="form-check-label" for="sizeRadioDefault2">
                  Размер 2
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault3" value="Размер 3">
+                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault3" value="Размер 3" data-price="300">
                 <label class="form-check-label" for="sizeRadioDefault3">
                  Размер 3
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault4" value="Размер 4">
+                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault4" value="Размер 4" data-price="400">
                 <label class="form-check-label" for="sizeRadioDefault4">
                  Размер 4
                 </label>
@@ -84,25 +85,25 @@
       <div class="accordion-body" name="material-check-form">
           
           <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault1" checked value="Материал 1">
+                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault1" checked value="Материал 1" data-price="20">
                 <label class="form-check-label" for="materialRadioDefault1" >
                   Материал 1
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault2" value="Материал 2">
+                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault2" value="Материал 2" data-price="64">
                 <label class="form-check-label" for="materialRadioDefault2">
                  Материал 2
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault3" value="Материал 3">
+                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault3" value="Материал 3" data-price="99">
                 <label class="form-check-label" for="materialRadioDefault3">
                  Материал 3
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault4" value="Материал 4">
+                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault4" value="Материал 4" data-price="199">
                 <label class="form-check-label" for="materialRadioDefault4">
                  Материал 4
                 </label>
@@ -120,25 +121,25 @@
     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="color-check-form">
           <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault1" checked value="Цвет 1">
+                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault1" checked value="Цвет 1" data-price="15">
                 <label class="form-check-label" for="colorRadioDefault1">
                   Цвет 1
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault2" value="Цвет 2">
+                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault2" value="Цвет 2" data-price="19">
                 <label class="form-check-label" for="colorRadioDefault2">
                  Цвет 2
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault3" value="Цвет 3">
+                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault3" value="Цвет 3" data-price="39">
                 <label class="form-check-label" for="colorRadioDefault3">
                  Цвет 3
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault4" value="Цвет 4">
+                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault4" value="Цвет 4" data-price="43">
                 <label class="form-check-label" for="colorRadioDefault4">
                  Цвет 4
                 </label>
@@ -190,13 +191,13 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Индивидуальный пакет" id="flexCheckDefault1">
+                <input class="form-check-input" type="checkbox" value="Индивидуальный пакет" name="option1" id="flexCheckDefault1" data-price="3">
                 <label class="form-check-label" for="flexCheckDefault1">
                     Индивидуальный пакет (+3 руб./шт)
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Пришивная бирка" id="flexCheckDefault2">
+                <input class="form-check-input" type="checkbox" value="Пришивная бирка" name="option2" id="flexCheckDefault2" data-price="1">
                 <label class="form-check-label" for="flexCheckDefault2">
                     Пришивная бирка (+1 руб./шт) – информация на бирке уточняется менеджером после размещения заказа
                 </label>
