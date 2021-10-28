@@ -10,4 +10,11 @@ function getFullPricePerPcs () {
     return modelPrice + sizePrice + materialPrice + colorPrice + option1Price + option2Price
 }
 
+function getCount () {
+    const count = Number(document.querySelector('input[name=countOrder]').value)
+
+    return count
+} 
+
+
 
