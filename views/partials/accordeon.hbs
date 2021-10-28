@@ -1,5 +1,6 @@
-<script defer src="/src/js/main.js"></script>
 <script defer src="/src/js/price.js"></script>
+<script defer src="/src/js/main.js"></script>
+
 
 <div class="container-sm">
  <div class="accordion accordion-flush" id="accordionFlushExample" >
@@ -119,9 +120,8 @@
       <div class="accordion-body">
 
           <div class="input-group mb-3">
-                <input type="number" class="form-control" placeholder="мин. 500 шт." aria-label="pcs" min="500" step="100">
-                <input type="submit" class="btn btn-primary" value="Подтвердить">
-            </div>
+                <input type="number" class="form-control" placeholder="мин. 500 шт." aria-label="pcs" min="500" step="100" name="countOrder" value="500" name="count">
+          </div>
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="Индивидуальный пакет" name="option1" id="flexCheckDefault1" data-price="3">
@@ -136,7 +136,7 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Наклейка с информацией, штрихкодом" id="flexCheckDefault3">
+                <input class="form-check-input" type="checkbox" value="Наклейка с информацией, штрихкодом" id="flexCheckDefault3" name="label">
                 <label class="form-check-label" for="flexCheckDefault3">
                     Наклейка с информацией, штрихкодом -  – информация на наклейке уточняется менеджером после размещения заказа
                 </label>
@@ -162,13 +162,13 @@
                 <input type="text" class="form-control" placeholder="Телефон" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_phone">
             </div>
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="e-mail" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="email" class="form-control" placeholder="e-mail" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_email">
                 <span class="input-group-text">@</span>
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Адрес доставки" aria-label="Recipient's username" aria-describedby="button-addon2" name="address">
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2">Заказать</button>
+            <button class="btn btn-primary" type="button" name="order-button" id="button-addon2">Заказать</button>
 
           </div>
         </div>
