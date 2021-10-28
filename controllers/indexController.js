@@ -8,8 +8,10 @@ class IndexController {
     const sizes = await Size.findAll({ raw: true });
     const materials = await Material.findAll({ raw: true });
     const colors = await Color.findAll({ raw: true });
-    console.log(colors);
-    res.render('index', { title: 'Express' });
+
+    res.render('index', {
+      bags, sizes, materials, colors,
+    });
   }
 }
 
