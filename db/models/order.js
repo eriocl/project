@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }) {
       // define association here
       this.belongsTo(User, { foreignKey: 'user_id' });
-      this.belongsToMany(Bag, { through: 'OrderEntries', foreignKey: 'bag_id' });
-      this.belongsToMany(Size, { through: 'OrderEntries', foreignKey: 'size_id' });
-      this.belongsToMany(Material, { through: 'OrderEntries', foreignKey: 'material_id' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'bag_color', as: 'bag_color' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'handles_color', as: 'handles_color' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'bot_color', as: 'bot_color' });
+      this.belongsToMany(Bag, { through: 'OrderEntries', foreignKey: 'order_id' });
+      this.belongsToMany(Size, { through: 'OrderEntries', foreignKey: 'order_id' });
+      this.belongsToMany(Material, { through: 'OrderEntries', foreignKey: 'order_id' });
+      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'bag_color' });
+      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'handles_color' });
+      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'bot_color' });
     }
   }
   Order.init({

@@ -52,11 +52,16 @@
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="material-check-form">
           {{#each materials}}
-          <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="{{this.price}}">
-                <label class="form-check-label" for="materialRadioDefault{{this.id}}" >
-                  {{this.name}}
-                </label>
+          <div class="form-check d-flex justify-content-between">
+                <div>
+                    <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="{{this.price}}">
+                    <label class="form-check-label" for="materialRadioDefault{{this.id}}" >
+                        {{this.name}}
+                    </label>
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{this.id}}">
+                  Подробнее.....
+                </button>
             </div>
           {{/each}}
           </div>
@@ -91,7 +96,7 @@
     <div class="accordion-body">
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений" data-name="disableImgAndLogo">
+                <input disabled class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений" data-name="disableImgAndLogo">
                 <label class="form-check-label" for="flexCheckDefault1">
                     Оставить шоппер без надписей, изображений
                 </label>
