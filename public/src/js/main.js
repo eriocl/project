@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const $wrapper = document.querySelector(".container-sm");
 const $priceDiv = document.querySelector(".main__price-count");
 const $orderButton = document.querySelector("button[name=order-button]");
@@ -9,6 +10,17 @@ const $fileUploadInput = document.querySelector('input[type=file]');
 const $fileUploadButton = document.querySelector('button[data-name=uploadButton]')
 
 
+=======
+const $wrapper = document.querySelector('.container-sm');
+const $priceDiv = document.querySelector('.main__price-count');
+const $orderButton = document.querySelector('button[name=order-button]');
+const $bagLogo = document.querySelector('h2[data-logo=logo]');
+const $setBagLogoButton = document.querySelector('button[data-name=setBagLogo]');
+const $setBagLogoInput = document.querySelector('input[name=shoper_inscription]');
+const $disableImgAndLogoCheckBox = document.querySelector(
+  'input[data-name=disableImgAndLogo]',
+);
+>>>>>>> 8743c64696109aebce6daaec272425418ccc7261
 
 $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
 
@@ -37,9 +49,9 @@ $orderButton.addEventListener('click', async () => {
   const bag_color = document.querySelector(
     'input[name=colorRadio]:checked',
   ).value;
-  const ind_pack = !!document.querySelector('input[name=option1]:checked');
-  const label = !!document.querySelector('input[name=option2]:checked');
-  const sticker = !!document.querySelector('input[name=label]:checked');
+  const ind_pack = document.querySelector('input[name=option1]:checked');
+  const label = document.querySelector('input[name=option2]:checked');
+  const sticker = document.querySelector('input[name=label]:checked');
   const pcs = document.querySelector('input[name=countOrder]').value;
   const name = document.querySelector('input[name=client_name]').value;
   const phone = document.querySelector('input[name=client_phone]').value;

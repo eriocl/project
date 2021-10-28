@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('OrderEntries', {
@@ -6,7 +5,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       order_id: {
         allowNull: false,
@@ -14,7 +13,7 @@ module.exports = {
         references: {
           model: 'Orders',
           key: 'id',
-        }
+        },
       },
       bag_id: {
         allowNull: false,
@@ -22,7 +21,7 @@ module.exports = {
         references: {
           model: 'Bags',
           key: 'id',
-        }
+        },
       },
       size_id: {
         allowNull: false,
@@ -30,7 +29,7 @@ module.exports = {
         references: {
           model: 'Sizes',
           key: 'id',
-        }
+        },
       },
       material_id: {
         allowNull: false,
@@ -38,7 +37,7 @@ module.exports = {
         references: {
           model: 'Materials',
           key: 'id',
-        }
+        },
       },
       bag_color: {
         allowNull: false,
@@ -46,7 +45,7 @@ module.exports = {
         references: {
           model: 'Colors',
           key: 'id',
-        }
+        },
       },
       handles_color: {
         allowNull: false,
@@ -54,7 +53,7 @@ module.exports = {
         references: {
           model: 'Colors',
           key: 'id',
-        }
+        },
       },
       bot_color: {
         allowNull: false,
@@ -62,37 +61,37 @@ module.exports = {
         references: {
           model: 'Colors',
           key: 'id',
-        }
+        },
       },
       pcs: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       ind_pack: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       label: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       sticker: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('OrderEntries');
-  }
+  },
 };

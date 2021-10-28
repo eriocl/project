@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -12,7 +10,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "OrderEntries",
+      'OrderEntries',
       [
         {
           order_id: 1,
@@ -20,15 +18,15 @@ module.exports = {
           size_id: 3,
           material_id: 2,
           bag_color: 1,
-          handles_color: 1,
-          bot_color: 2,
+          handles_color: 2,
+          bot_color: 3,
           pcs: 500,
           ind_pack: false,
           label: false,
           sticker: false,
         },
       ],
-      {}
+      {},
     );
   },
 
@@ -39,6 +37,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("OrderEntries", null, {});
+    await queryInterface.bulkDelete('OrderEntries', null, {});
   },
 };
