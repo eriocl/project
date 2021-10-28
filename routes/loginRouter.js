@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res) => {
   const { email, password } = req.body;
-  const user = User.findOne({ where: { email } });
+  const user = User.findOne({ where: { } });
   if (email === user.email && password === user.password) {
     req.session.user = { id: user.id, name: user.name };
     res.redirect('/');

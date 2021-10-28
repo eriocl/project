@@ -8,12 +8,21 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
+     */
     await queryInterface.bulkInsert(
       'Users',
       [
         {
-          name: 'Alex', phone: '+79095679898', email: 'test@mail.ru', password: 'hz',
+          name: 'Alex',
+          phone: '+79095679898',
+          email: 'test@mail.ru',
+          password: 'hz',
+        },
+        {
+          name: 'admin',
+          phone: '+79095679898',
+          email: 'admin@mail.ru',
+          password: 'admin',
         },
       ],
       {},
