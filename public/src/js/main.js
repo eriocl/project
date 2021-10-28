@@ -1,55 +1,70 @@
+const $wrapper = document.querySelector(".container-sm");
+const $priceDiv = document.querySelector(".main__price-count");
+const $orderButton = document.querySelector("button[name=order-button]");
 
+$priceDiv.innerText = `${getFullPricePerPcs()}р.`;
 
+$wrapper.addEventListener("change", (event) => {
+  if (
+    event.target.type === "radio" ||
+    event.target.type === "checkbox" ||
+    event.target.type === "number"
+  ) {
+    $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
+  }
+});
 
-const $wrapper = document.querySelector('.container-sm')
-const $priceDiv = document.querySelector('.main__price-count')
-const $orderButton = document.querySelector('button[name=order-button]')
+$orderButton.addEventListener("click", async () => {
+  const bag_id = document.querySelector("input[name=modelRadio]:checked").value;
+  const size_id = document.querySelector("input[name=sizeRadio]:checked").value;
+  const material_id = document.querySelector(
+    "input[name=materialRadio]:checked"
+  ).value;
+  const color_id = document.querySelector(
+    "input[name=colorRadio]:checked"
+  ).value;
+  const ind_pack = document.querySelector("input[name=option1]:checked")
+    ? true
+    : false;
+  const label = document.querySelector("input[name=option2]:checked")
+    ? true
+    : false;
+  const sticker = document.querySelector("input[name=label]:checked")
+    ? true
+    : false;
+  const pcs = document.querySelector("input[name=countOrder]").value;
+  const name = document.querySelector("input[name=client_name]").value;
+  const phone = document.querySelector("input[name=client_phone]").value;
+  const email = document.querySelector("input[name=client_email]").value;
+  const delivery_address = document.querySelector("input[name=address]").value;
 
+  const price = getCount() * getFullPricePerPcs();
 
-$priceDiv.innerText = `${getFullPricePerPcs()}р.`
-        
-$wrapper.addEventListener('change', (event) => {
-    if (event.target.type === 'radio' || event.target.type === 'checkbox' || event.target.type === 'number') {
-        $priceDiv.innerText = `${getFullPricePerPcs()}р.`
-        
-    }
-})
+  const data = {
+    entry: {
+      bag_id,
+      size_id,
+      material_id,
+      color_id,
+      ind_pack,
+      label,
+      sticker,
+      pcs,
+    },
+    user: { name, phone, email },
+    order: { delivery_address, price },
+  };
 
-$orderButton.addEventListener('click', async () => {
-    const bagId = document.querySelector('input[name=modelRadio]:checked').value
-    const sizeId = document.querySelector('input[name=sizeRadio]:checked').value
-    const materialId = document.querySelector('input[name=materialRadio]:checked').value
-    const colorId = document.querySelector('input[name=colorRadio]:checked').value
-    const individualPack = document.querySelector('input[name=option1]:checked') ? true : false
-    const label = document.querySelector('input[name=option2]:checked') ? true : false
-    const sticker = document.querySelector('input[name=label]:checked') ? true : false
-    const count = document.querySelector('input[name=countOrder]').value
-    const name = document.querySelector('input[name=client_name]').value
-    const phone = document.querySelector('input[name=client_phone]').value
-    const email = document.querySelector('input[name=client_email]').value
-    const deliveryAddress = document.querySelector('input[name=address]').value
+  const response = await fetch("/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
 
+    body: JSON.stringify(data),
+  });
 
-
-
-    const data = {entry : {bagId, sizeId, materialId, colorId, individualPack, label, sticker, count}, user : { name, phone, email, deliveryAddress}}
-    
-    
-
-    const response = await fetch('/orders', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'     
-        },
-        body: {
-            body: JSON.stringify(data)
-        }
-    })
-
-    if (response.ok) {
-        console.log('Ураааа');
-    }
-
-
-})  
-
+  if (response.ok) {
+    console.log("Ураааа");
+  }
+});
