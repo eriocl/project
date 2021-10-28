@@ -13,7 +13,7 @@ module.exports = {
       'Orders',
       [
         {
-          paid: false, price: 100500, delivery_adress: 'Лениниский проспект 39 дом 2 кв 6', user_id: 1,
+          paid: false, price: 100500, delivery_address: 'Лениниский проспект 39 дом 2 кв 6', user_id: 1,
         },
       ],
       {},
