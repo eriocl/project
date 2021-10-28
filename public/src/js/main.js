@@ -1,6 +1,11 @@
 const $wrapper = document.querySelector(".container-sm");
 const $priceDiv = document.querySelector(".main__price-count");
 const $orderButton = document.querySelector("button[name=order-button]");
+$bagLogo = document.querySelector('h2[data-logo=logo]')
+$setBagLogoButton = document.querySelector('button[data-name=setBagLogo]')
+$setBagLogoInput = document.querySelector('input[name=shoper_inscription]')
+$disableImgAndLogoCheckBox = document.querySelector('input[data-name=disableImgAndLogo')
+
 
 $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
 
@@ -20,7 +25,7 @@ $orderButton.addEventListener("click", async () => {
   const material_id = document.querySelector(
     "input[name=materialRadio]:checked"
   ).value;
-  const color_id = document.querySelector(
+  const bag_color = document.querySelector(
     "input[name=colorRadio]:checked"
   ).value;
   const ind_pack = document.querySelector("input[name=option1]:checked")
@@ -45,7 +50,7 @@ $orderButton.addEventListener("click", async () => {
       bag_id,
       size_id,
       material_id,
-      color_id,
+      bag_color,
       ind_pack,
       label,
       sticker,
@@ -68,3 +73,12 @@ $orderButton.addEventListener("click", async () => {
     console.log("Ураааа");
   }
 });
+
+
+$setBagLogoButton.addEventListener('click', ()=>{
+    $bagLogo.innerText = $setBagLogoInput.value
+    $setBagLogoInput.value =""
+})
+
+console.log($disableImgAndLogoCheckBox);
+
