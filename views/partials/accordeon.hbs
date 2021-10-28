@@ -11,30 +11,14 @@
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body" name="model-check-form">
+                {{#each bags}}
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="modelRadio" id="modelRadioDefault1" checked value="Модель 1" data-price="100">
-                <label class="form-check-label" for="modelRadioDefault1">
-                  Модель 1
+                <input class="form-check-input" type="radio" name="modelRadio" id="modelRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}} value="${{this.id}}" data-price="{{this.price}}">
+                <label class="form-check-label" for="modelRadioDefault{{this.id}}">
+                    {{this.name}}
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="modelRadio" id="modelRadioDefault2" value="Модель 2" data-price="200">
-                <label class="form-check-label" for="modelRadioDefault2">
-                 Модель 2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="modelRadio" id="modelRadioDefault3" value="Модель 3" data-price="300">
-                <label class="form-check-label" for="modelRadioDefault3">
-                 Модель 3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="modelRadio" id="modelRadioDefault4" value="Модель 4" data-price="400">
-                <label class="form-check-label" for="modelRadioDefault4">
-                 Модель 4
-                </label>
-            </div>
+                {{/each}}
           </div>
     </div>
   </div>
@@ -46,31 +30,14 @@
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="size-check-form">
-          
-         <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault1" checked value="Размер 1" data-price="100">
-                <label class="form-check-label" for="sizeRadioDefault1">
-                  Размер 1
-                </label>
-            </div>
+            {{#each sizes}}
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault2" value="Размер 2" data-price="200">
-                <label class="form-check-label" for="sizeRadioDefault2">
-                 Размер 2
+                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="{{this.price}}">
+                <label class="form-check-label" for="sizeRadioDefault{{this.id}}">
+                    {{this.size}}
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault3" value="Размер 3" data-price="300">
-                <label class="form-check-label" for="sizeRadioDefault3">
-                 Размер 3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="sizeRadio" id="sizeRadioDefault4" value="Размер 4" data-price="400">
-                <label class="form-check-label" for="sizeRadioDefault4">
-                 Размер 4
-                </label>
-            </div>
+            {{/each}}
           </div>
 
           </div>
@@ -83,32 +50,14 @@
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="material-check-form">
-          
+          {{#each materials}}
           <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault1" checked value="Материал 1" data-price="20">
-                <label class="form-check-label" for="materialRadioDefault1" >
-                  Материал 1
+                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="${{this.price}}">
+                <label class="form-check-label" for="materialRadioDefault{{this.id}}" >
+                  {{this.name}}
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault2" value="Материал 2" data-price="64">
-                <label class="form-check-label" for="materialRadioDefault2">
-                 Материал 2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault3" value="Материал 3" data-price="99">
-                <label class="form-check-label" for="materialRadioDefault3">
-                 Материал 3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault4" value="Материал 4" data-price="199">
-                <label class="form-check-label" for="materialRadioDefault4">
-                 Материал 4
-                </label>
-            </div>
-          
+          {{/each}}
           </div>
     </div>
   </div>
@@ -120,31 +69,15 @@
     </h2>
     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="color-check-form">
+          {{#each colors}}
           <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault1" checked value="Цвет 1" data-price="15">
-                <label class="form-check-label" for="colorRadioDefault1">
-                  Цвет 1
+                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}} checked value="{{this.id}}" data-price="{{this.price}}">
+                <label class="form-check-label" for="colorRadioDefault{{this.id}}">
+                  {{this.name}}
                 </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault2" value="Цвет 2" data-price="19">
-                <label class="form-check-label" for="colorRadioDefault2">
-                 Цвет 2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault3" value="Цвет 3" data-price="39">
-                <label class="form-check-label" for="colorRadioDefault3">
-                 Цвет 3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="colorRadio" id="colorRadioDefault4" value="Цвет 4" data-price="43">
-                <label class="form-check-label" for="colorRadioDefault4">
-                 Цвет 4
-                </label>
-            </div>
           </div>
+          {{/each}}
+      </div>
     </div>
   </div>
   <div class="accordion-item">
@@ -155,7 +88,7 @@
     </h2>
     <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
     <div class="accordion-body">
-          
+
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений">
                 <label class="form-check-label" for="flexCheckDefault1">
@@ -184,7 +117,7 @@
     </h2>
     <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-          
+
           <div class="input-group mb-3">
                 <input type="number" class="form-control" placeholder="мин. 500 шт." aria-label="pcs" min="500" step="100">
                 <input type="submit" class="btn btn-primary" value="Подтвердить">
@@ -208,7 +141,7 @@
                     Наклейка с информацией, штрихкодом -  – информация на наклейке уточняется менеджером после размещения заказа
                 </label>
             </div>
-          
+
           </div>
     </div>
   </div>
@@ -236,7 +169,7 @@
                 <input type="text" class="form-control" placeholder="Адрес доставки" aria-label="Recipient's username" aria-describedby="button-addon2" name="address">
             </div>
             <button class="btn btn-primary" type="button" id="button-addon2">Заказать</button>
-          
+
           </div>
         </div>
     </div>
