@@ -4,6 +4,7 @@ const {
 
 class OrderController {
   static async store(req, res) {
+    
     try {
       console.log(req.body);
       const user = { ...req.body.user };

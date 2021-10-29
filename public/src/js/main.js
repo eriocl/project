@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const $wrapper = document.querySelector(".container-sm");
 const $priceDiv = document.querySelector(".main__price-count");
 const $orderButton = document.querySelector("button[name=order-button]");
@@ -8,19 +7,14 @@ const $setBagLogoInput = document.querySelector('input[name=shoper_inscription]'
 const $disableImgAndLogoCheckBox = document.querySelector('input[data-name=disableImgAndLogo');
 const $fileUploadInput = document.querySelector('input[type=file]');
 const $fileUploadButton = document.querySelector('button[data-name=uploadButton]')
+const $serverResponseDivBody = document.querySelector('div[name=serverResponseDivBody]')
+const $serverResponseh5Header = document.querySelector('h5[name=serverResponseh5Header]')
 
+const $paymentModalDiv=document.querySelector('div[name=paymentModalDiv]')
+const $cashPaymentButton = document.querySelector('button[name=cashPayment]')
+const $cashlessPaymentButton = document.querySelector('button[name=cashlessPayment]')
+const $footer = document.querySelector('footer')
 
-=======
-const $wrapper = document.querySelector('.container-sm');
-const $priceDiv = document.querySelector('.main__price-count');
-const $orderButton = document.querySelector('button[name=order-button]');
-const $bagLogo = document.querySelector('h2[data-logo=logo]');
-const $setBagLogoButton = document.querySelector('button[data-name=setBagLogo]');
-const $setBagLogoInput = document.querySelector('input[name=shoper_inscription]');
-const $disableImgAndLogoCheckBox = document.querySelector(
-  'input[data-name=disableImgAndLogo]',
-);
->>>>>>> 8743c64696109aebce6daaec272425418ccc7261
 
 $priceDiv.innerText = `${getFullPricePerPcs()}р.`;
 
@@ -49,9 +43,9 @@ $orderButton.addEventListener('click', async () => {
   const bag_color = document.querySelector(
     'input[name=colorRadio]:checked',
   ).value;
-  const ind_pack = document.querySelector('input[name=option1]:checked');
-  const label = document.querySelector('input[name=option2]:checked');
-  const sticker = document.querySelector('input[name=label]:checked');
+  const ind_pack = !!document.querySelector('input[name=option1]:checked');
+  const label = !!document.querySelector('input[name=option2]:checked');
+  const sticker = !!document.querySelector('input[name=label]:checked');
   const pcs = document.querySelector('input[name=countOrder]').value;
   const name = document.querySelector('input[name=client_name]').value;
   const phone = document.querySelector('input[name=client_phone]').value;
@@ -71,7 +65,7 @@ $orderButton.addEventListener('click', async () => {
       sticker,
       pcs,
     },
-    user: { name, phone, email },
+    user: { name, phone, email},
     order: { delivery_address, price },
   };
   const response = await fetch('/orders', {
@@ -83,9 +77,33 @@ $orderButton.addEventListener('click', async () => {
   });
 
   if (response.ok) {
-    console.log('Ураааа');
+    $serverResponseh5Header.innerText = "Заказ успешно доставлен"
+    $serverResponseDivBody.innerText = "Мы получили ваш заказ. Выберите форму оплаты"
+
+    
+  } else {
+    $serverResponseh5Header.innerText = "Ошибка сервера"
+    $serverResponseDivBody.innerText = "Мы знаем о проблеме и уже работаем над ее устранением. Пожалуйста, для оформления заказа свяжитесь с нами по телефону 8-495-123-45-67"
+    $cashPaymentButton.remove()
+    $cashlessPaymentButton.innerText="Закрыть"
   }
+
+  $paymentModalDiv.classList.add('show')
+  $paymentModalDiv.style.display = 'block'
+  $paymentModalDiv.setAttribute('role', 'dialog')
+  const $fadeDiv = document.createElement('div')
+  $fadeDiv.classList.add('modal-backdrop','fade', 'show')
+  document.body.insertBefore($fadeDiv, $footer)
+
+
+  $cashPaymentButton.addEventListener('click', ()=>{
+    window.location = 'http://localhost:3000/payment'
+  })
+
+
 })
+
+
 
 $setBagLogoButton.addEventListener('click', ()=>{
     $bagLogo.innerText = $setBagLogoInput.value

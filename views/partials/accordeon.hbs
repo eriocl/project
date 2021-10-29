@@ -1,6 +1,8 @@
 <script defer src="/src/js/price.js"></script>
 <script defer src="/src/js/main.js"></script>
-<script defer src="/src/js/validation.js"></script>
+{{!-- <script defer src="/src/js/validation.js"></script> --}}
+
+
 
 
 <div class="container-sm">
@@ -97,7 +99,7 @@
     <div class="accordion-body">
 
             <div class="form-check">
-                <input disabled class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений" data-name="disableImgAndLogo">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений" data-name="disableImgAndLogo">
                 <label class="form-check-label" for="flexCheckDefault1">
                     Оставить шоппер без надписей, изображений
                 </label>
@@ -181,5 +183,27 @@
     </div>
   </div>
 
+ </div>
 </div>
+
+  <div class="modal fade " id="qwer" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="paymentModalDiv">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ert" name="serverResponseh5Header">Modal title</h5>
+      </div>
+      <div class="modal-body" name="serverResponseDivBody">
+        ...
+      </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashPayment">Наличный расчет</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashlessPayment">Безналичный расчет</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
