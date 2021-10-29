@@ -1,18 +1,13 @@
-<div class="mx-auto" style="width: 300px;">
-  <form action="" method="post">
+<div class="d-flex justify-content-center mt-3" style="width: 1000px">
+  <form action="/user/login" method="POST" class="w-50" name="login">
     <div class="mb-3">
-      <label for="InputEmail" class="form-label">Email address</label>
-      <input id="InputEmail" type="email" class="form-control" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email">
     </div>
     <div class="mb-3">
-      <label for="InputPassword" class="form-label">Password</label>
-      <input id="InputPassword" type="password" class="form-control">
+      <label for="Password" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="password" name="password">
     </div>
-    <div class="mb-3 form-check">
-      <input id="Check" type="checkbox" class="form-check-input">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Войти</button>
   </form>
 </div>
