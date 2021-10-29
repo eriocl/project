@@ -23,6 +23,7 @@ class OrderController {
   static async show(req, res) {
     try {
       const orders = await OrderEntry.findAll({
+        // raw: true,
         include: [Bag, Size, Material,
           { model: Color, as: 'bagColor' },
           { model: Color, as: 'handlesColor' },
@@ -30,7 +31,7 @@ class OrderController {
           { model: Order, include: [User] },
         ],
       });
-      // console.log(orders);
+      console.log(orders);
       res.render('orders/index', { orders });
     } catch (e) {
       console.log(e);
