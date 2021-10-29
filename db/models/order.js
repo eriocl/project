@@ -17,9 +17,16 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(Bag, { through: 'OrderEntries', foreignKey: 'order_id' });
       this.belongsToMany(Size, { through: 'OrderEntries', foreignKey: 'order_id' });
       this.belongsToMany(Material, { through: 'OrderEntries', foreignKey: 'order_id' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'bag_color' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'handles_color' });
-      this.belongsToMany(Color, { through: 'OrderEntries', foreignKey: 'order_id', as: 'bot_color' });
+
+      this.belongsToMany(Color, {
+        through: 'OrderEntries', foreignKey: 'order_id', otherKey: 'bag_color', as: 'bag_color',
+      });
+      this.belongsToMany(Color, {
+        through: 'OrderEntries', foreignKey: 'order_id', otherKey: 'handles_color', as: 'handles_color',
+      });
+      // this.belongsToMany(Color, {
+      //   through: 'OrderEntries', foreignKey: 'order_id', otherKey: 'bot_color', as: 'bot_color',
+      // });
     }
   }
   Order.init({
