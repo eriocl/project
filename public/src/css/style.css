@@ -389,3 +389,8 @@
   /* padding: 40px; */
   background-color: rgba(238, 238, 227, 0.596);
 }
+
+.status {
+  width:20px;
+  height: 20px;
+}
