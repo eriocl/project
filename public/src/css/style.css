@@ -7,16 +7,17 @@
 	src: local('Agilla'),
 		url('/fonts/AngillaTattooPersonalUse-9pz5.ttf'); 
 }
-@font-face {
-	font-family: 'Sportviper'; 
-	src: local('Sportviper'),
-		url('/fonts/SPORTVIPER.ttf'); 
+ @font-face {
+	font-family: 'Fascina'; 
+	src: local('Fascina'),
+		url('/fonts/FascinatePersonalUseRegular-eZYGg.ttf'); 
 }
-@font-face {
-	font-family: 'Americ'; 
-	src: local('Americ'),
-		url('/fonts/GvTimeRegular.ttf'); 
-}
+
+/* @font-face {
+	font-family: 'Beograd'; 
+	src: local('Beograd'),
+		url('/fonts/Beograd.ttf'); 
+}  */
 
 
 /* @font-face { */
@@ -37,7 +38,9 @@
   margin-right: 30px;
   /* width: initial; */
 }
-
+.shoper{
+  font-family: Fascina ;
+}
 .btn-primary {
   background-color: rgb(255, 235, 205);
   color: black;
@@ -112,7 +115,7 @@
 }
 
 .header__list a {
-  font-family: 'Sportviper';
+  font-family: 'Beograd';
   display: block;
   font-size: 20px;
   font-weight: 600;
@@ -124,7 +127,7 @@
 }
 .form-check-label,
 .button{
-  font-family: 'Americ';
+  font-family: 'Beograd';
 }
 
 .header__list {
@@ -158,6 +161,8 @@
 }
 
 .main-wrapper {
+  display: grid;
+  margin: auto;
   padding: 30px;
 }
 
@@ -190,7 +195,10 @@
 }
 
 .main__img {
-  box-shadow: 0 0 20px rgba(197, 143, 96, 0.5);
+  margin-bottom: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(121, 95, 95, 0.995);
+ 
 }
 
 .main__right {
@@ -202,11 +210,6 @@
   margin-top: 0;
 }
 
-.main__img {
-  margin-bottom: 30px;
-  border-radius: 10%;
-  box-shadow: 0 0 20px rgba(121, 95, 95, 0.995);
-}
 
 .accordion-button {
   box-shadow: 0 0 10px rgba(118, 117, 78, 0.5);
@@ -222,22 +225,28 @@
 
 .accordion-flush .accordion-item .accordion-button {
   border-radius: 3px;
-  font-family: 'Sportviper';
+  font-family: 'Beograd';
 }
 
 .main__price {
-  display: block;
+ 
+  display: flex;
+  justify-content: center;
   width: fit-content;
   height: fit-content;
-  padding: 10px;
-  background-color: chartreuse;
-  margin-bottom: 30px;
+  padding: 5px;
+  background-color: rgba(149, 213, 10, 0.2);
+  box-shadow: 0 0  30px rgba(149, 213, 10, 0.5);
+  
+  margin: auto;
   border-radius: 10px;
   /* margin-left: 50%;
   transform: translateX(-50%); */
   /* bottom:0; */
   /* position: absolute; */
 }
+
+
 
 .map {
   display: block;
