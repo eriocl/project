@@ -1,5 +1,9 @@
 <div class="d-flex justify-content-center mt-3" style="width: 1000px">
-  <form action="/user/login" method="POST" class="w-50" name="login">
+  <form action="/user/registration" method="POST" class="w-50" name="formreg">
+    <div class="mb-3">
+      <label for="name" class="form-label">Имя</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email">
@@ -8,6 +12,6 @@
       <label for="Password" class="form-label">Пароль</label>
       <input type="password" class="form-control" id="password" name="password">
     </div>
-    <button type="submit" class="btn btn-primary">Войти</button>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
   </form>
 </div>
