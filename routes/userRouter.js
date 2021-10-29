@@ -21,14 +21,14 @@ router
     const hash = await bcrypt.hash(password, saltRounds);
     if (name && email && password) {
       try {
-        console.log(name, email, password);
+        // console.log(name, email, password);
         const newUser = await db.User.create({ name, email, password: hash });
         if (newUser) {
           req.session.userName = newUser.name;
           req.session.userId = newUser._id;
           req.session.userAdmin = newUser.isAdmin;
           // res.redirect("/lk");
-          res.redirect('/');
+          // res.redirect('/');
         }
       } catch (error) {
         res.sendStatus(401);
