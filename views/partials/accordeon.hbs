@@ -186,24 +186,66 @@
  </div>
 </div>
 
-  <div class="modal fade " id="qwer" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="paymentModalDiv">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ert" name="serverResponseh5Header">Modal title</h5>
-      </div>
-      <div class="modal-body" name="serverResponseDivBody">
-        ...
-      </div>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashPayment">Наличный расчет</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashlessPayment">Безналичный расчет</button>
+    <div class="modal fade " id="qwer" data-bs-backdrop="static" data-bs-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="paymentModalDiv">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ert" name="serverResponseh5Header">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" name="closeButton"></button>
+        </div>
+        <div class="modal-body" name="serverResponseDivBody">
+          ...
+        </div>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashPayment">Оплата картой</button>
+            <button type="button" class="btn btn-primary" data-bs-target="#cashlessPaymentModal" name="cashlessPayment">Оплата по счету</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="modal fade " id="cashlessPaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="cashlessPaymentModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ert" name="cashLessHeader">Оплата по счету</h5>
+          
+        </div>
+        <div class="modal-body" name="cashlessBody">
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Название компании</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ОГРН</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ИНН</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Юр. Адрес</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Банковские реквизиты</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+        </div>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="sendDataForPayment">Отправить реквизиты</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 
