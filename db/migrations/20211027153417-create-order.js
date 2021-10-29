@@ -15,7 +15,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
-      delivery_adress: {
+      delivery_address: {
         allowNull: false,
         type: Sequelize.TEXT,
       },

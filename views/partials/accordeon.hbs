@@ -1,5 +1,9 @@
-<script defer src="/src/js/main.js"></script>
 <script defer src="/src/js/price.js"></script>
+<script defer src="/src/js/main.js"></script>
+<script defer src="/src/js/validation.js"></script>
+
+
+
 
 <div class="container-sm">
  <div class="accordion accordion-flush" id="accordionFlushExample" >
@@ -51,11 +55,16 @@
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body" name="material-check-form">
           {{#each materials}}
-          <div class="form-check">
-                <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="{{this.price}}">
-                <label class="form-check-label" for="materialRadioDefault{{this.id}}" >
-                  {{this.name}}
-                </label>
+          <div class="form-check d-flex justify-content-between">
+                <div>
+                    <input class="form-check-input" type="radio" name="materialRadio" id="materialRadioDefault{{this.id}}" {{#if (isFirstElement @index)}} checked {{/if}}  value="{{this.id}}" data-price="{{this.price}}">
+                    <label class="form-check-label" for="materialRadioDefault{{this.id}}" >
+                        {{this.name}}
+                    </label>
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{this.id}}">
+                  Подробнее.....
+                </button>
             </div>
           {{/each}}
           </div>
@@ -90,7 +99,7 @@
     <div class="accordion-body">
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" value="Оставить шоппер без надписей, изображений" data-name="disableImgAndLogo">
                 <label class="form-check-label" for="flexCheckDefault1">
                     Оставить шоппер без надписей, изображений
                 </label>
@@ -98,12 +107,12 @@
             <br>
             <div class="input-group">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                <button class="btn btn-primary" type="button" id="inputGroupFileAddon04">Загрузить</button>
+                <button class="btn btn-primary" type="button" id="inputGroupFileAddon04" data-name="uploadButton">Загрузить</button>
             </div>
             <br>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Введите надпись на шопере" aria-label="Recipient's username" aria-describedby="button-addon2" autocomplete="off" name="shoper_inscription">
-                <button class="btn btn-primary" type="button" id="button-addon2">ОК</button>
+                <button class="btn btn-primary" type="button" id="button-addon2" data-name="setBagLogo">ОК</button>
             </div>
 
     </div>
@@ -119,9 +128,8 @@
       <div class="accordion-body">
 
           <div class="input-group mb-3">
-                <input type="number" class="form-control" placeholder="мин. 500 шт." aria-label="pcs" min="500" step="100">
-                <input type="submit" class="btn btn-primary" value="Подтвердить">
-            </div>
+                <input type="number" class="form-control" placeholder="мин. 500 шт." aria-label="pcs" min="500" step="100" name="countOrder" value="500" name="count">
+          </div>
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="Индивидуальный пакет" name="option1" id="flexCheckDefault1" data-price="3">
@@ -136,7 +144,7 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Наклейка с информацией, штрихкодом" id="flexCheckDefault3">
+                <input class="form-check-input" type="checkbox" value="Наклейка с информацией, штрихкодом" id="flexCheckDefault3" name="label">
                 <label class="form-check-label" for="flexCheckDefault3">
                     Наклейка с информацией, штрихкодом -  – информация на наклейке уточняется менеджером после размещения заказа
                 </label>
@@ -159,21 +167,85 @@
                 <input type="text" class="form-control" placeholder="ФИО" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_name">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Телефон" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_phone">
+                <input type="tel" class="form-control" placeholder="Телефон" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_phone" pattern="[+]{1}[7]{1}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
             </div>
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="e-mail" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="email" class="form-control" placeholder="e-mail" aria-label="Recipient's username" aria-describedby="button-addon2" name="client_email">
                 <span class="input-group-text">@</span>
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Адрес доставки" aria-label="Recipient's username" aria-describedby="button-addon2" name="address">
             </div>
-            <button class="btn btn-primary" type="button" id="button-addon2">Заказать</button>
+            <button class="btn btn-primary" type="button" name="order-button" id="button-addon2">Заказать</button>
 
           </div>
         </div>
     </div>
   </div>
 
+ </div>
 </div>
-</div>
+
+    <div class="modal fade " id="qwer" data-bs-backdrop="static" data-bs-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="paymentModalDiv">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ert" name="serverResponseh5Header">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" name="closeButton"></button>
+        </div>
+        <div class="modal-body" name="serverResponseDivBody">
+          ...
+        </div>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="cashPayment">Оплата картой</button>
+            <button type="button" class="btn btn-primary" data-bs-target="#cashlessPaymentModal" name="cashlessPayment">Оплата по счету</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade " id="cashlessPaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" name="cashlessPaymentModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ert" name="cashLessHeader">Оплата по счету</h5>
+          
+        </div>
+        <div class="modal-body" name="cashlessBody">
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Название компании</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ОГРН</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ИНН</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Юр. Адрес</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Банковские реквизиты</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+        </div>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" name="sendDataForPayment">Отправить реквизиты</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

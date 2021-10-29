@@ -1,6 +1,6 @@
 <header class="header">
   <div class="header__wrapper">
-    <p class="header__name name">Shopers</p>
+    <p class="header__name name name__levit">Shopers</p>
     <a class="header__logo "><img src="./img/485-4856902_salon-crunchys-travel-shop-vector-family-shopping-png.png"
         width="163" height="135" alt="Логотип шоперов"></a>
     <nav class="header-navigation">
@@ -9,45 +9,158 @@
         <li class="header__login header__list-item "><a href="">Как заказать</a></li>
         <li class="header__constructor header__list-item "><a href="">Конструктор</a></li>
         <li class="header__conditions header__list-item"><a href="">Условия</a></li>
-        <li class="header__contacts header__list-item"><a href="">Контакты</a></li>
+        <li class="header__contacts header__list-item">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary map-button" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Контакты
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal_style modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Информация о нас!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <section class="map">
+                    <h2 class="visually-hidden"></h2>
+                    <div class="map__about">
+                      <address class="adress">Ул.Орджоникидзе дом 10, корпус 11 </address>
+                      <p class="about-us__contacts">Тел.:<a href="tel:+7495555655">+7 (495) 555-56-55</a></p>
+                      <p class="about-us__contacts">Email:<a href="shopers@elbrus.ru">shopers@elbrus.ru</a></p>
+                    </div>
+
+                  </section>
+                  <iframe class="iframe"
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Aef3dc2be23d196d6b79e611b76c2eebbacc613447d2d002f15d71d63c1db4194&amp;source=constructor"
+                    width="100%" height="300"> frameborder="0"></iframe>
+                </div>
+                {{!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Understood</button>
+                </div> --}}
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
 
   </div>
 </header>
-<main class="main">
-  <div class="main-wrapper">
-    <section class="main__flex">
-      <h2 class="main__title visually-hidden"></h2>
-      <!-- <div class="main__card"> -->
-      <div class="main__left">
-        <img class="main__img" src="img/il_1588xN.2202286823_ba4l.jpg" width="500" height="500" alt="фотография шопера">
-        <div class="main__price">
-          <span class="main__price-name">Цена:</span> <span class="main__price-count"> 1000р.</span>
+<div class="background__wrapper">
+  <main class="main">
+    <div class="main-wrapper">
+      <section class="main__flex">
+        <h2 class="main__title visually-hidden"></h2>
+        <!-- <div class="main__card"> -->
+        <div class="main__left">
+          <div class="position-relative">
+            <img class="main__img" src="img/shopper.jpg" width="500" height="500" alt="фотография шопера">
+            <div class="bg-info bg-transparent w-75 h-25 translate-middle-x position-absolute top-50 start-50">
+              <h2 class="position-absolute top-50 start-50 translate-middle-x" data-logo="logo">Your logo</h2>
+            </div>
+          </div>
+          <div class="main__price">
+            <span class="main__price-name">Цена:</span> <span class="main__price-count"> 0р.</span>
+          </div>
+          <!-- </div> -->
         </div>
-        <!-- </div> -->
-      </div>
-      <div class="main__right">
-        {{> accordeon}}
-      </div>
-
-
-    </section>
-
-  </div>
-
-  <section class="map">
-    <h2 class="visually-hidden"></h2>
-    <div class="map__about">
-      <address class="adress">Ул.Ордженикидзе дом 10, корпус 11 </address>
-      <p class="about-us__contacts">Тел. : <a href="tel:+7495555655">+7 (495) 555-56-55</a></p>
-      <p class="about-us__contacts">Email : <a href="shopers@elbrus.ru">shopers@elbrus.ru</a></p>
+        <div class="main__right">
+          {{> accordeon}}
+        </div>
     </div>
-    <iframe class="iframe"
-      src="https://yandex.ru/map-widget/v1/?um=constructor%3Aef3dc2be23d196d6b79e611b76c2eebbacc613447d2d002f15d71d63c1db4194&amp;source=constructor"
-      width="100%" height="250"> frameborder="0"></iframe>
-  </section>
+    </section>
+</div>
+
+<!-- modal1 -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+<div class="modal fade modal__byaz" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel-byaz">Хлопчатобумажная плотная ткань полотняного
+          переплетения
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/img/byaz.jpeg" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal2 -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+
+<div class="modal fade modal__dvynitka" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel-dvynitka">Высокопрочная хлопковая ткань полотняного
+          переплетения в две нити</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/img/dvynitka.jpeg" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal3 -->
+<!-- Button trigger modal -->
+<!-- Modal -->
+
+<div class="modal fade modal__sarja" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel-sarja">Плотная, натуральная хлопковая ткань</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/img/sarja.jpg" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal4 -->
+<!-- Button trigger modal -->
+<!-- Modal -->
+
+<div class="modal fade modal__spanbond" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel-spanbond">Нетканый материал из расплава полимера</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/img/spanbond.jpeg" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
+
 
 <footer class="footer">
   <div class="footer__wrapper">
@@ -57,10 +170,6 @@
       <li><a class="main-footer__instagram" aria-label="Ссылка на instagram" href=""></a></li>
       <li><a class="main-footer__twitter" aria-label="Ссылка на twitter" href=""></a></li>
     </ul>
+    <img class="footer__logo" src="/img/footer__logo.png" width="60" height="80">
   </div>
 </footer>
-
-
-
-
-_____________________________
