@@ -109,7 +109,7 @@ $orderButton.addEventListener('click', async () => {
 
 
   $cashPaymentButton.addEventListener('click', ()=>{
-    window.location = 'http://localhost:3000/payment'
+    window.location = '/payment'
   })
 
   $cashlessPaymentButton.addEventListener('click', ()=> {

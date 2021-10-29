@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "migrate" : "npx sequelize-cli db:migrate --env production",
-    "seed" : "npx sequelize-cli db:seed:all --env production",
-    "start" : "npm run migrate && npm run seed && node app.js",
+    "start" : "npx sequelize-cli db:migrate:undo:all --env production && npx sequelize-cli db:migrate --env production && npx sequelize-cli db:seed:all --env production && node app.js",
     "dev": "npx nodemon app.js"
   },
   "dependencies": {
