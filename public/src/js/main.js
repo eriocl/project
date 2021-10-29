@@ -134,7 +134,7 @@ $orderButton.addEventListener('click', async () => {
     $cashlessPaymentModal.removeAttribute('role')
     const $fadeDiv = document.querySelector('div.modal-backdrop.fade.show')
     $fadeDiv.remove()
-    window.location = 'http://localhost:3000/'
+    window.location = '/'
   })
 
   $closeButton.addEventListener('click', ()=>{
