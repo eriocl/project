@@ -31,7 +31,7 @@ class OrderController {
           { model: Order, include: [User] },
         ],
       });
-      console.log(orders);
+      // console.log(orders);
       res.render('orders/index', { orders });
     } catch (e) {
       console.log(e);
