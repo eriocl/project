@@ -11,8 +11,13 @@ const $serverResponseDivBody = document.querySelector('div[name=serverResponseDi
 const $serverResponseh5Header = document.querySelector('h5[name=serverResponseh5Header]')
 
 const $paymentModalDiv=document.querySelector('div[name=paymentModalDiv]')
+
+const $cashlessPaymentModal =document.querySelector('div[name=cashlessPaymentModal]')
 const $cashPaymentButton = document.querySelector('button[name=cashPayment]')
 const $cashlessPaymentButton = document.querySelector('button[name=cashlessPayment]')
+const $sendDataForPayment = document.querySelector('button[name=sendDataForPayment]')
+const $closeButton = document.querySelector('button[name=closeButton]')
+
 const $footer = document.querySelector('footer')
 
 
@@ -84,8 +89,15 @@ $orderButton.addEventListener('click', async () => {
   } else {
     $serverResponseh5Header.innerText = "Ошибка сервера"
     $serverResponseDivBody.innerText = "Мы знаем о проблеме и уже работаем над ее устранением. Пожалуйста, для оформления заказа свяжитесь с нами по телефону 8-495-123-45-67"
-    $cashPaymentButton.remove()
-    $cashlessPaymentButton.innerText="Закрыть"
+    $cashlessPaymentButton.remove()
+    $cashPaymentButton.innerText="Закрыть"
+
+    $cashPaymentButton.addEventListener('click', ()=>{
+      $paymentModalDiv.classList.remove('show')
+      $paymentModalDiv.style.display = 'none'
+      $paymentModalDiv.removeAttribute('role')
+      $fadeDiv.remove()
+    })
   }
 
   $paymentModalDiv.classList.add('show')
@@ -100,8 +112,41 @@ $orderButton.addEventListener('click', async () => {
     window.location = 'http://localhost:3000/payment'
   })
 
+  $cashlessPaymentButton.addEventListener('click', ()=> {
+      $paymentModalDiv.classList.remove('show')
+      $paymentModalDiv.style.display = 'none'
+      $paymentModalDiv.removeAttribute('role')
+      
+
+      $cashlessPaymentModal.classList.add('show')
+      $cashlessPaymentModal.style.display = 'block'
+      $cashlessPaymentModal.setAttribute('role', 'dialog')
+      
+      $fadeDiv.classList.add('modal-backdrop','fade', 'show')
+      
+
+
+  })
+
+  $sendDataForPayment.addEventListener('click', ()=>{
+    $cashlessPaymentModal.classList.remove('show')
+    $cashlessPaymentModal.style.display = 'none'
+    $cashlessPaymentModal.removeAttribute('role')
+    const $fadeDiv = document.querySelector('div.modal-backdrop.fade.show')
+    $fadeDiv.remove()
+    window.location = 'http://localhost:3000/'
+  })
+
+  $closeButton.addEventListener('click', ()=>{
+    $paymentModalDiv.classList.remove('show')
+    $paymentModalDiv.style.display = 'none'
+    $paymentModalDiv.removeAttribute('role')
+    const $fadeDiv = document.querySelector('div.modal-backdrop.fade.show')
+    $fadeDiv.remove()
+  })
 
 })
+
 
 
 
