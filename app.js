@@ -3,7 +3,6 @@ require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const logger = require('morgan');
 const hbs = require('hbs');
 const { isFirstElement } = require('./views/helpers/isFirstElement');
 
@@ -20,7 +19,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(process.env.PWD, 'views/partials'));
 hbs.registerHelper('isFirstElement', isFirstElement);
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.env.PWD, 'public')));
