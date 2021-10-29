@@ -5,10 +5,11 @@ const db = require('../db/models');
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
   host: process.env.DB_HOST,
-  dialect: process.env.DB_DIALECT
+  dialect: process.env.DB_DIALECT,
 });
 
 const bcrypt = require('bcrypt');
+
 const saltRounds = 10;
 
 router
@@ -24,9 +25,7 @@ router
         // console.log(name, email, password);
         const newUser = await db.User.create({ name, email, password: hash });
         if (newUser) {
-          req.session.userName = newUser.name;
-          req.session.userId = newUser._id;
-          req.session.userAdmin = newUser.isAdmin;
+          req.session.user = newUser;
           // res.redirect("/lk");
           // res.redirect('/');
         }
@@ -47,7 +46,7 @@ router
       const { email, password } = req.body;
       const user = await db.User.findOne({
         raw: true,
-        where: { email: email }
+        where: { email },
       });
 
       userId = user.id;
@@ -81,7 +80,7 @@ router
     if (req.session.views) {
       req.session.views++;
       res.setHeader('Content-Type', 'text/html');
-      res.write('<p>views: ' + req.session.views + '</p>');
+      res.write(`<p>views: ${req.session.views}</p>`);
       res.end();
     } else {
       req.session.views = 1;
