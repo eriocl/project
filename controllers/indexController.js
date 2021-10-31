@@ -1,5 +1,5 @@
 const {
-  Bag, Size, Material, Color, Order,
+  Bag, Size, Material, Color,
 } = require('../db/models');
 
 class IndexController {
@@ -9,9 +9,11 @@ class IndexController {
     const materials = await Material.findAll({ raw: true });
     const colors = await Color.findAll({ raw: true });
 
-    
     res.render('index', {
-      bags, sizes, materials, colors,
+      bags,
+      sizes,
+      materials,
+      colors,
     });
   }
 }

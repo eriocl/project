@@ -1,5 +1,11 @@
 const {
-  User, Order, OrderEntry, Bag, Size, Material, Color,
+  User,
+  Order,
+  OrderEntry,
+  Bag,
+  Size,
+  Material,
+  Color,
 } = require('../db/models');
 
 class OrderController {
@@ -9,9 +15,16 @@ class OrderController {
       const order = { ...req.body.order };
       const entry = { ...req.body.entry };
       const newUser = await User.create({ ...user });
-      const newOrder = await Order.create({ ...order, user_id: newUser.id, paid: false });
+      const newOrder = await Order.create({
+        ...order,
+        user_id: newUser.id,
+        paid: false,
+      });
       await OrderEntry.create({
-        ...entry, order_id: newOrder.id, handles_color: 1, bot_color: 1,
+        ...entry,
+        order_id: newOrder.id,
+        handles_color: 1,
+        bot_color: 1,
       });
       res.sendStatus(200);
     } catch (e) {
@@ -23,15 +36,16 @@ class OrderController {
   static async show(req, res) {
     try {
       const orders = await OrderEntry.findAll({
-        // raw: true,
-        include: [Bag, Size, Material,
+        include: [
+          Bag,
+          Size,
+          Material,
           { model: Color, as: 'bagColor' },
           { model: Color, as: 'handlesColor' },
           { model: Color, as: 'botColor' },
           { model: Order, include: [User] },
         ],
       });
-      // console.log(orders);
       res.render('orders/index', { orders });
     } catch (e) {
       console.log(e);

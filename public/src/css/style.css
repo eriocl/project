@@ -1,47 +1,28 @@
-/* @font-face {
-  font-family: 'Agilla';
-  src: url(/fonts/AngillaTattooPersonalUse-9pz5.ttf) format('ttf'); /* Только если нужна поддержка старых Android, иначе закомментировать */
- 
 @font-face {
-	font-family: 'Agilla'; 
-	src: local('Agilla'),
-		url('/fonts/AngillaTattooPersonalUse-9pz5.ttf'); 
+  font-family: "Agilla";
+  src: local("Agilla"), url("/fonts/AngillaTattooPersonalUse-9pz5.ttf");
 }
 
- @font-face {
-	font-family: 'Fascina'; 
-	src: local('Fascina'),
-		url('/fonts/FascinatePersonalUseRegular-eZYGg.ttf'); 
+@font-face {
+  font-family: "Fascina";
+  src: local("Fascina"), url("/fonts/FascinatePersonalUseRegular-eZYGg.ttf");
 }
-
-/* @font-face {
-	font-family: 'Beograd'; 
-	src: local('Beograd'),
-		url('/fonts/Beograd.ttf'); 
-}  */
-
-
-/* @font-face { */
-  /* font-family: 'Gilroy';
-  font-weight: 800;
-  src: url('/fonts/AngillaTattooPersonalUse-9pz5.ttf') format('tiff');
-} */
 
 .body {
   display: grid;
   min-height: 100vh;
-  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-areas: "header" "main" "footer";
   grid-template-rows: auto 1fr auto;
 }
 
-.btn, .btn-primary {
+.btn,
+.btn-primary {
   padding: 3px 5px;
   margin-right: 30px;
-  /* width: initial; */
 }
 
-.shoper{
-  font-family: Fascina ;
+.shoper {
+  font-family: Fascina;
 }
 
 .btn-primary {
@@ -63,24 +44,15 @@
   margin-bottom: auto;
 }
 
-/* .footer{ */
-
-/* grid-area:footer; */
-
-/* margin-top: auto; */
-
-/* } */
-
 .header {
   grid-area: header;
   min-width: 300px;
   padding: 10px;
-  margin-top:10px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .header__wrapper {
-  /* padding: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,24 +65,22 @@
 }
 
 .name {
-  font-family: 'Agilla';
+  font-family: "Agilla";
   letter-spacing: 5px;
   font-size: 40px;
   font-weight: 800;
   margin-right: auto;
   padding-left: 135px;
   margin-bottom: 0;
-
 }
-.name__levit{
+.name__levit {
   font-size: 90px;
   position: absolute;
-  left:0;
-  top:-45px
+  left: 0;
+  top: -45px;
 }
 .header__list {
   display: flex;
-  /* justify-content: center; */
   list-style-type: none;
   flex-wrap: wrap;
   margin-bottom: 0;
@@ -118,7 +88,7 @@
 }
 
 .header__list a {
-  font-family: 'Beograd';
+  font-family: "Beograd";
   display: block;
   font-size: 20px;
   font-weight: 600;
@@ -129,14 +99,13 @@
   width: fit-content;
 }
 .form-check-label,
-.button{
-  font-family: 'Beograd';
+.button {
+  font-family: "Beograd";
 }
 
 .header__list {
   display: flex;
   align-items: center;
-
 }
 
 .header__list a:hover::before {
@@ -150,8 +119,7 @@
   height: 5px;
   background-color: rgb(63, 69, 58);
   z-index: 1;
-  filter: drop-shadow( 0 0 5px rgb(64, 67, 61));
-  /* transition: 5s; */
+  filter: drop-shadow(0 0 5px rgb(64, 67, 61));
 }
 
 .header__logo {
@@ -178,16 +146,11 @@
   display: flex;
   position: relative;
   padding: 10px;
-  /* outline: 1px solid chartreuse; */
-  /* justify-content: center; */
   flex-wrap: wrap;
 }
 
 .main__left {
   display: block;
-  /* justify-content: center; */
-  /* outline: 1px solid rgb(41, 66, 15); */
-  /* margin-bottom: 30px; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -196,12 +159,9 @@
   margin-bottom: 30px;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(121, 95, 95, 0.995);
-
 }
 
 .main__right {
-  /* margin: auto; */
-  /* margin: 10%; */
   width: 50%;
   margin-right: auto;
   margin-left: auto;
@@ -221,25 +181,20 @@
 
 .accordion-flush .accordion-item .accordion-button {
   border-radius: 3px;
-  font-family: 'Beograd';
+  font-family: "Beograd";
 }
 
 .main__price {
- 
   display: flex;
   justify-content: center;
   width: fit-content;
   height: fit-content;
   padding: 5px;
   background-color: rgba(149, 213, 10, 0.2);
-  box-shadow: 0 0  30px rgba(149, 213, 10, 0.5);
-  
+  box-shadow: 0 0 30px rgba(149, 213, 10, 0.5);
+
   margin: auto;
   border-radius: 10px;
-  /* margin-left: 50%;
-  transform: translateX(-50%); */
-  /* bottom:0; */
-  /* position: absolute; */
 }
 
 .map {
@@ -253,7 +208,6 @@
   font-weight: 600;
   border: none;
   font-size: 20px;
-  /* padding-right: 30px; */
 }
 
 .modal_style {
@@ -287,9 +241,7 @@
   padding: 0 30px;
   margin-top: auto;
   grid-area: footer;
-  /* display: flex; */
   align-items: center;
-  /* justify-content: center; */
   background-color: rgb(255, 235, 205);
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(89, 59, 59, 0.5);
@@ -313,14 +265,10 @@
   list-style-type: none;
   justify-content: space-around;
   align-items: center;
-  /* margin-right: 30%; */
-  /* margin:auto;
- */
   bottom: 0;
   position: absolute;
   right: 50%;
   transform: translateX(50%);
-  /* top:50%; */
   padding-left: 0;
 }
 
@@ -333,16 +281,12 @@
   content: url(/img/facebook.svg);
   width: 33px;
   height: 33px;
-  /* -webkit-filter: drop-shadow( 0px 3px 2px red );
-  filter: drop-shadow( 0px 3px 2px red ); */
-  /* background-color: chocolate; */
-  /* position: absolute;
-  z-index: 1; */
 }
 
-.main-footer__facebook:hover, .main-footer__instagram:hover, .main-footer__twitter:hover {
-  /* -webkit-filter: drop-shadow( 0px 3px 2px rgb(111, 167, 94) ); */
-  filter: drop-shadow( 0 0 10px rgb(112, 179, 58));
+.main-footer__facebook:hover,
+.main-footer__instagram:hover,
+.main-footer__twitter:hover {
+  filter: drop-shadow(0 0 10px rgb(112, 179, 58));
 }
 
 .main-footer__instagram {
@@ -358,8 +302,6 @@
   display: flex;
   position: absolute;
   right: 0;
-  /* margin-right: auto; */
-  /* margin-right: 5%; */
 }
 
 .modal-title {
@@ -367,7 +309,7 @@
   margin-left: 50%;
   transform: translateX(-50%);
 }
-.accordion-flush .accordion-item{
+.accordion-flush .accordion-item {
   background-color: rgba(238, 238, 227, 0.596);
 }
 .modal-content {
@@ -376,16 +318,14 @@
   box-shadow: 0 0 40px rgba(242, 242, 242, 0.5);
   border: none;
 }
-.background__wrapper{
-  
+.background__wrapper {
   display: block;
   border-radius: 30px;
   margin-bottom: 30px;
-  /* padding: 40px; */
   background-color: rgba(238, 238, 227, 0.596);
 }
 
 .status {
-  width:20px;
+  width: 20px;
   height: 20px;
 }

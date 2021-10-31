@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start" : "npx sequelize-cli db:migrate:undo:all --env production && npx sequelize-cli db:migrate --env production && npx sequelize-cli db:seed:all --env production && node app.js",
+    "start": "npx sequelize-cli db:migrate:undo:all --env production && npx sequelize-cli db:migrate --env production && npx sequelize-cli db:seed:all --env production && node app.js",
     "dev": "npx nodemon app.js"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "morgan": "~1.9.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
+    "prettier-plugin-hbs": "^1.0.1",
     "redis": "^3.1.2",
     "sequelize": "^6.8.0",
     "sequelize-cli": "^6.2.0"
@@ -28,6 +29,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
   }
 }
