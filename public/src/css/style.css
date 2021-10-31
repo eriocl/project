@@ -7,6 +7,7 @@
 	src: local('Agilla'),
 		url('/fonts/AngillaTattooPersonalUse-9pz5.ttf'); 
 }
+
  @font-face {
 	font-family: 'Fascina'; 
 	src: local('Fascina'),
@@ -38,9 +39,11 @@
   margin-right: 30px;
   /* width: initial; */
 }
+
 .shoper{
   font-family: Fascina ;
 }
+
 .btn-primary {
   background-color: rgb(255, 235, 205);
   color: black;
@@ -166,15 +169,10 @@
   padding: 30px;
 }
 
-/* .main__flex {
-  display: flex;
-
-} */
-
-/* .main__card{
-  display: grid;
-  row-gap: 30px;
-} */
+.status {
+  width: 20px;
+  height: 20px;
+}
 
 .main__flex {
   display: flex;
@@ -198,7 +196,7 @@
   margin-bottom: 30px;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(121, 95, 95, 0.995);
- 
+
 }
 
 .main__right {
@@ -210,12 +208,10 @@
   margin-top: 0;
 }
 
-
 .accordion-button {
   box-shadow: 0 0 10px rgba(118, 117, 78, 0.5);
   margin-bottom: 15px;
   border-radius: 10%;
-  
 }
 
 .accordion-button:focus {
@@ -245,8 +241,6 @@
   /* bottom:0; */
   /* position: absolute; */
 }
-
-
 
 .map {
   display: block;
@@ -389,9 +383,4 @@
   margin-bottom: 30px;
   /* padding: 40px; */
   background-color: rgba(238, 238, 227, 0.596);
-}
-
-.status {
-  width: 20px;
-  height: 20px;
 }

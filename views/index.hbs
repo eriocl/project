@@ -15,8 +15,11 @@
             data-bs-target="#staticBackdrop">
             Контакты
           </button>
+<!----------->
 
-          <!-- Modal -->
+
+
+<!--__________          &lt;!&ndash; Modal &ndash;&gt;-->
           <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal_style modal-dialog-centered">
@@ -50,6 +53,34 @@
         </li>
       </ul>
     </nav>
+
+
+      <div class="">
+          <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffead0;">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="/lk">{{userName}}</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                          <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                          {{#if userAdmin}}
+                              <a class="nav-link" href="/users">Пользователи</a>
+                              <a class="nav-link" href="/newchannel">Добавить</a>
+                          {{/if}}
+                          {{#if userName}}
+                              <a class="nav-link" href="/user/logout">Выход</a>
+                          {{else}}
+                              <a class="nav-link" href="/user/registration">Регистрация</a>
+                              <a class="nav-link" href="/user/login">Вход</a>
+                          {{/if}}
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+
 
   </div>
 </header>
